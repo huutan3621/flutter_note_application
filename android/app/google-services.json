@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588220779470",
+    "project_id": "huutan3621-note-app",
+    "storage_bucket": "huutan3621-note-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588220779470:android:dc6a570e5431b2cdc4399f",
+        "android_client_info": {
+          "package_name": "huutan3621.dev.note.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588220779470-j85h3ouqf70tfhen5efn8tbe44g9e85r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVgpCuyyPu5zpq1PNKvto214l08DFnjbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588220779470-j85h3ouqf70tfhen5efn8tbe44g9e85r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
