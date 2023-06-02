@@ -13,7 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../global/data/repo/auth_repo.dart';
 import '../../../shared/shared_ui/dialogs/app_dialog.dart';
 import '../../login/cubit/login_cubit.dart';
-import '../../global/data/entities/hcm23_user.dart';
+import '../data/entities/user.dart';
 
 part 'auth_state.dart';
 
@@ -26,13 +26,13 @@ class AuthCubit extends Cubit<AuthState> {
   void login(
     BuildContext context,
     UserCredential user,
-    Hcm23User hcm23user,
+    NoteUser noteUser,
   ) async {
     emit(
       Authenticated(
         FirebaseDatabase.instanceFor(app: firebaseApp),
         user: user,
-        hcm23user: hcm23user,
+        noteUser: noteUser,
       ),
     );
   }
@@ -64,7 +64,7 @@ class AuthCubit extends Cubit<AuthState> {
             await SharedPreferences.getInstance();
         await preferences.setString(
             rememberAccountKey,
-            Hcm23User(
+            NoteUser(
               email: username,
               password: password,
             ).toJson());
@@ -72,7 +72,7 @@ class AuthCubit extends Cubit<AuthState> {
       login(
         ctx,
         userCre.value,
-        Hcm23User(
+        NoteUser(
           email: username,
           password: password,
         ),
@@ -123,12 +123,12 @@ class AuthCubit extends Cubit<AuthState> {
       userCredential: (state as Authenticated).user,
     );
     if (result is Right<String, bool> && result.value == true) {
-      final Hcm23User hcm23user = (state as Authenticated).hcm23user.copyWith(
+      final NoteUser noteUser = (state as Authenticated).noteUser.copyWith(
             password: newPassword,
           );
       final SharedPreferences preferences =
           await SharedPreferences.getInstance();
-      await preferences.setString(rememberAccountKey, hcm23user.toJson());
+      await preferences.setString(rememberAccountKey, noteUser.toJson());
       showDialog(
         context: ctx,
         builder: (context) => AppDialog(

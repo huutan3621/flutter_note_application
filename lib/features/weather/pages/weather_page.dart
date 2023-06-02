@@ -53,7 +53,17 @@ class _WeatherPageState extends State<WeatherPage> {
         return SingleChildScrollView(
           // padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Container(
-            color: Colors.deepPurple.withOpacity(0.4),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.deepPurple.shade100,
+                  Colors.deepPurple.shade400,
+                ],
+              ),
+            ),
+            // color: Colors.deepPurple.withOpacity(0.4),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

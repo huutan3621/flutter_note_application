@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '588220779470',
     projectId: 'huutan3621-note-app',
     databaseURL:
-        'https://huutan3621-note-app.asia-southeast1.firebasedatabase.app',
+        'https://huutan3621-note-app-default-rtdb.asia-southeast1.firebasedatabase.app/',
     storageBucket: 'huutan3621-note-app.appspot.com',
   );
 }

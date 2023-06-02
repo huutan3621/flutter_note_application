@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../global/cubit/auth_cubit.dart';
-import '../../global/data/entities/hcm23_user.dart';
 import '../../../shared/shared_ui/dialogs/app_dialog.dart';
+import '../../global/data/entities/user.dart';
 
 part 'change_password_state.dart';
 
@@ -25,9 +25,9 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
         ));
 
   void updatePassword(BuildContext ctx) async {
-    final Hcm23User hcm23user =
-        (ctx.read<AuthCubit>().state as Authenticated).hcm23user;
-    if (hcm23user.password != currentPasswordController.text) {
+    final NoteUser noteUser =
+        (ctx.read<AuthCubit>().state as Authenticated).noteUser;
+    if (noteUser.password != currentPasswordController.text) {
       showDialog(
         context: ctx,
         builder: (context) => AppDialog(

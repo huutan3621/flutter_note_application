@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-class Hcm23User {
+class NoteUser {
   final String? password;
   final String? email;
 
-  Hcm23User({
+  NoteUser({
     this.password,
     this.email,
   });
@@ -17,8 +17,8 @@ class Hcm23User {
     };
   }
 
-  factory Hcm23User.fromMap(Map<String, dynamic> map) {
-    return Hcm23User(
+  factory NoteUser.fromMap(Map<String, dynamic> map) {
+    return NoteUser(
       password: map['password'] != null ? map['password'] as String : null,
       email: map['email'] != null ? map['email'] as String : null,
     );
@@ -26,14 +26,14 @@ class Hcm23User {
 
   String toJson() => json.encode(toMap());
 
-  factory Hcm23User.fromJson(String source) =>
-      Hcm23User.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory NoteUser.fromJson(String source) =>
+      NoteUser.fromMap(json.decode(source) as Map<String, dynamic>);
 
-  Hcm23User copyWith({
+  NoteUser copyWith({
     String? password,
     String? email,
   }) {
-    return Hcm23User(
+    return NoteUser(
       password: password ?? this.password,
       email: email ?? this.email,
     );
